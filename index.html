@@ -1,1397 +1,519 @@
-﻿<!DOCTYPE html>
-<html>
-  <head>
-    <title>index</title>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Untitled Document</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-    <meta name="apple-mobile-web-app-capable" content="yes"/>
-    <link href="resources/css/jquery-ui-themes.css" type="text/css" rel="stylesheet"/>
-    <link href="resources/css/axure_rp_page.css" type="text/css" rel="stylesheet"/>
-    <link href="data/styles.css" type="text/css" rel="stylesheet"/>
-    <link href="files/index/styles.css" type="text/css" rel="stylesheet"/>
-    <script src="resources/scripts/jquery-1.7.1.min.js"></script>
-    <script src="resources/scripts/jquery-ui-1.8.10.custom.min.js"></script>
-    <script src="resources/scripts/prototypePre.js"></script>
-    <script src="data/document.js"></script>
-    <script src="resources/scripts/prototypePost.js"></script>
-    <script src="files/index/data.js"></script>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link type="text/css" href="resources/css/reset.css" rel="Stylesheet" />
+    <link type="text/css" href="resources/css/default.css" rel="Stylesheet" />
+    <!--<link href='https://fonts.googleapis.com/css?family=Nunito:300' rel='stylesheet' type='text/css'>-->
+
     <script type="text/javascript">
-      $axure.utils.getTransparentGifPath = function() { return 'resources/images/transparent.gif'; };
-      $axure.utils.getOtherPath = function() { return 'resources/Other.html'; };
-      $axure.utils.getReloadPath = function() { return 'resources/reload.html'; };
+        if (location.href.toString().indexOf('file://localhost/') == 0) {
+            location.href = location.href.toString().replace('file://localhost/', 'file:///');
+        }
     </script>
-  </head>
-  <body>
-    <div id="base" class="">
 
-      <!-- Unnamed (图片) -->
-      <div id="u0" class="ax_default _图片">
-        <img id="u0_img" class="img " src="images/index/u0.png"/>
-      </div>
+    <!-- 8.0.0.3379 -->
+<script src="resources/scripts/jquery-1.7.1.min.js"></script>
+<script src="resources/scripts/startPre.js"></script>
+<script src="data/document.js"></script>
 
-      <!-- Unnamed (占位符) -->
-      <div id="u1" class="ax_default placeholder">
-        <img id="u1_img" class="img " src="images/index/u1.png"/>
-        <div id="u1_text" class="text ">
-          <p><span>最热门</span></p>
-        </div>
-      </div>
+    <style type="text/css">
 
-      <!-- Unnamed (动态面板) -->
-      <div id="u2" class="ax_default">
-        <div id="u2_state0" class="panel_state" data-label="State1" style="">
-          <div id="u2_state0_content" class="panel_state_content">
+#outerContainer {
+	width:1000px;
+	height:1500px;
+}
 
-            <!-- Unnamed (图片) -->
-            <div id="u3" class="ax_default image">
-              <img id="u3_img" class="img " src="images/index/u3.png"/>
-            </div>
-          </div>
-        </div>
-        <div id="u2_state1" class="panel_state" data-label="State2" style="visibility: hidden;">
-          <div id="u2_state1_content" class="panel_state_content">
+.vsplitbar {
+    width: 3px;
+    /*background: #B9B9B9;*/
+    border-right: 1px solid #8f949a;
+}
 
-            <!-- Unnamed (占位符) -->
-            <div id="u4" class="ax_default placeholder">
-              <img id="u4_img" class="img " src="images/index/u4.png"/>
-            </div>
-          </div>
-        </div>
-      </div>
+.vsplitbar:hover, .vsplitbar.active {
+    background: #8f949a;
+}
 
-      <!-- Unnamed (矩形) -->
-      <div id="u5" class="ax_default button">
-        <div id="u5_div" class=""></div>
-        <div id="u5_text" class="text ">
-          <p><span>快速匹配</span></p>
-        </div>
-      </div>
+#rightPanel {
+    background-color: White;
+}
 
-      <!-- Unnamed (矩形) -->
-      <div id="u6" class="ax_default button">
-        <div id="u6_div" class=""></div>
-        <div id="u6_text" class="text ">
-          <p><span>指定房间</span></p>
-        </div>
-      </div>
+/*#leftPanel {
+    min-width: 120px;
+}*/
 
-      <!-- Unnamed (矩形) -->
-      <div id="u7" class="ax_default button">
-        <div id="u7_div" class=""></div>
-        <div id="u7_text" class="text ">
-          <p><span>自定义</span></p>
-        </div>
-      </div>
+.splitterMask {
+   position:absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   overflow: hidden;
+   background-image: url(resources/images/transparent.gif);
+   z-index: 20000;
+}
 
-      <!-- Unnamed (热区) -->
-      <div id="u8" class="ax_default">
-      </div>
+    </style>
+    <script type="text/javascript" language="JavaScript"><!--
+        var SITEMAP_COLLAPSE_VAR_NAME = 'c';
+        var PLUGIN_VAR_NAME = 'g';
+        var FOOTNOTES_VAR_NAME = 'fn';
+        var ADAPTIVE_VIEW_VAR_NAME = 'view';
+        var lastLeftPanelWidth = 295;
+        var toolBarOnly = true;
 
-      <!-- Unnamed (占位符) -->
-      <div id="u9" class="ax_default placeholder">
-        <img id="u9_img" class="img " src="images/index/u9.png"/>
-        <div id="u9_text" class="text ">
-          <p><span>大厅</span></p>
-        </div>
-      </div>
+        // isolate scope
+        (function() {
+            setUpController();
+            
+            var configuration = $axure.document.configuration;
+            var _settings = {};
+            _settings.projectId = configuration.prototypeId;
+            _settings.isAxshare = configuration.isAxshare;
+            _settings.loadFeedbackPlugin = configuration.loadFeedbackPlugin;
+            var cHash = getHashStringVar(SITEMAP_COLLAPSE_VAR_NAME);
+            _settings.startCollapsed = cHash == "1";
+            if(cHash == "2") closePlayer();
+            var gHash = getHashStringVar(PLUGIN_VAR_NAME);
+            if(gHash == "") gHash = 1;
+            _settings.startPluginGid = gHash;
 
-      <!-- Unnamed (图片) -->
-      <div id="u10" class="ax_default _图片">
-        <img id="u10_img" class="img " src="images/index/u0.png"/>
-      </div>
+            $axure.player.settings = _settings;
 
-      <!-- Unnamed (图片) -->
-      <div id="u11" class="ax_default _图片">
-        <img id="u11_img" class="img " src="images/index/u0.png"/>
-      </div>
+            $(window).bind('load', function() {
+                if(CHROME_5_LOCAL && !$('body').attr('pluginDetected')) {
+                    window.location = 'resources/chrome/chrome.html';
+                }
+            });
 
-      <!-- Unnamed (图片) -->
-      <div id="u12" class="ax_default _图片">
-        <img id="u12_img" class="img " src="images/index/u0.png"/>
-      </div>
+            $(document).ready(function() {
+                $axure.page.bind('load.start', mainFrame_onload);
+                $axure.messageCenter.addMessageListener(messageCenter_message);
 
-      <!-- Unnamed (矩形) -->
-      <div id="u13" class="ax_default primary_button ax_default_hidden" style="display:none; visibility: hidden">
-        <div id="u13_div" class=""></div>
-        <div id="u13_text" class="text ">
-          <p><span>开麦</span></p>
-        </div>
-      </div>
+                $(document).on('pluginShown', function (event, data) {
+                    setVarInCurrentUrlHash('g', data ? data : '');
+                });
 
-      <!-- 中间切换页 (动态面板) -->
-      <div id="u14" class="ax_default" data-label="中间切换页">
-        <div id="u14_state0" class="panel_state" data-label="State1" style="">
-          <div id="u14_state0_content" class="panel_state_content">
+                $(document).on('pluginCreated', function(event, data) {
+                    if($axure.player.settings.startPluginGid == data) {
+                        $axure.player.showPlugin(data);
+                    }
+                });
 
-            <!-- 屏幕 (动态面板) -->
-            <div id="u15" class="ax_default" data-label="屏幕">
-              <div id="u15_state0" class="panel_state" data-label="State1" style="">
-                <div id="u15_state0_content" class="panel_state_content">
+                if($axure.player.settings.loadFeedbackPlugin) {
+                    if($axure.player.settings.isAxshare) {
+                        $axure.utils.loadJS('/Scripts/plugins/feedback/feedback8.js');
+                    } else {
+                        $axure.utils.loadJS('http://share.axure.com/Scripts/plugins/feedback/feedback8.js');
+                    }
+                }
 
-                  <!-- 内容 (动态面板) -->
-                  <div id="u16" class="ax_default" data-label="内容">
-                    <div id="u16_state0" class="panel_state" data-label="State1" style="">
-                      <div id="u16_state0_content" class="panel_state_content">
+                if(navigator.userAgent.indexOf("MSIE") >= 0) $('#outerContainer').width('100%');
+                initialize();
+                if($axure.player.settings.startCollapsed) $('#outerContainer').splitter({ sizeLeft: 0 });
+                else $('#outerContainer').splitter({ sizeLeft: lastLeftPanelWidth });
+                $('#leftPanel').width(lastLeftPanelWidth);
+                
+                $(window).resize(function() { resizeContent(); });
 
-                        <!-- Unnamed (图片) -->
-                        <div id="u17" class="ax_default image">
-                          <img id="u17_img" class="img " src="images/index/u17.png"/>
-                        </div>
+                $('#maximizePanelContainer').hide();
 
-                        <!-- 第一页 (矩形) -->
-                        <div id="u18" class="ax_default box_1 ax_default_hidden" data-label="第一页" style="display:none; visibility: hidden">
-                          <div id="u18_div" class=""></div>
-                        </div>
+                initializeLogo();
 
-                        <!-- Unnamed (图片) -->
-                        <div id="u19" class="ax_default image">
-                          <img id="u19_img" class="img " src="images/index/u3.png"/>
-                        </div>
+                $(window).resize();
+                resizeContent();
+                
+                $axure.player.collapseToBar();
 
-                        <!-- 第二页 (矩形) -->
-                        <div id="u20" class="ax_default box_1 ax_default_hidden" data-label="第二页" style="display:none; visibility: hidden">
-                          <div id="u20_div" class=""></div>
-                        </div>
+                if($axure.player.settings.startCollapsed) {
+                    collapse();
+                    $('#leftPanel').width(0);
+                }
 
-                        <!-- Unnamed (图片) -->
-                        <div id="u21" class="ax_default image">
-                          <img id="u21_img" class="img " src="images/index/u3.png"/>
-                        </div>
-                      </div>
+                if(MOBILE_DEVICE) {
+                    $('#interfaceControlFrameMinimizeContainer').height('45px');
+                    $('#interfaceControlFrameMinimizeContainer a').height('45px');
+                    $('#interfaceControlFrameHeaderContainer').css('margin-top','45px');
+                    $('#interfaceControlFrameCloseContainer a').css('padding','10px 0px');
+                    $('#maximizePanelContainer').height('45px');//.css('top','inherit').css('bottom','0px');
+
+                    $('body').removeClass('hashover');
+
+                    if(IOS) {
+                        $('#rightPanel').css('overflow', 'auto').css('-webkit-overflow-scrolling', 'touch').css('-ms-overflow-x', 'hidden');
+
+                        window.addEventListener("orientationchange", function() {
+                            var viewport = document.querySelector("meta[name=viewport]");
+                            //so iOS doesn't zoom when switching back to portrait
+                            viewport.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0');
+                            viewport.setAttribute('content', 'width=device-width, initial-scale=1.0');
+                            resizeContent();
+                        }, false);
+
+                        $axure.page.bind('load.start', function() {
+                            resizeContent();
+                        });
+                    }
+                }
+
+            });
+
+            function initialize() {
+                var legacyQString = getQueryString("Page");
+                if (legacyQString.length > 0) {
+                    location.href = location.href.substring(0, location.href.indexOf("?")) + "#p=" + legacyQString;
+                    return;
+                }
+
+                var mainFrame = document.getElementById("mainFrame");
+                //if it's local file on safari, test if we can access mainframe after its loaded
+                if(SAFARI && document.location.href.indexOf('file://') >= 0) {
+                    $(mainFrame).load(function () {
+                        var canAccess;
+                        try {
+                            var mainFrameWindow = mainFrame.contentWindow || mainFrame.contentDocument;
+                            mainFrameWindow['safari_file_CORS'] = 'Y';
+                            canAccess = mainFrameWindow['safari_file_CORS'] === 'Y';
+                        } catch(err) {
+                            canAccess = false;
+                        }
+
+                        if(!canAccess) window.location = 'resources/chrome/safari.html';
+                    });
+                }
+
+                mainFrame.contentWindow.location.href = getInitialUrl();
+            }
+
+            function initializeLogo() {
+                if($axure.document.configuration.logoImagePath) {
+                    var image = new Image();
+                    image.onload = function() {
+                        $('#logoImage').css('max-width', this.width + 'px');
+                        $axure.player.resizeContent();
+                    };
+                    image.src = $axure.document.configuration.logoImagePath;
+                
+                    $('#interfaceControlFrameLogoImageContainer').html('<img id="logoImage" src="" />');
+                    $('#logoImage').attr('src', $axure.document.configuration.logoImagePath).load(function() { resizeContent(); });
+                } else $('#interfaceControlFrameLogoImageContainer').hide();
+
+                if ($axure.document.configuration.logoImageCaption) {
+                    $('#interfaceControlFrameLogoCaptionContainer').html($axure.document.configuration.logoImageCaption);
+                } else $('#interfaceControlFrameLogoCaptionContainer').hide();
+
+                if(!$('#interfaceControlFrameLogoImageContainer').is(':visible') && !$('#interfaceControlFrameLogoCaptionContainer').is(':visible')) {
+                    $('#interfaceControlFrameLogoContainer').hide();
+                }
+            }
+
+            var resizeContent = $axure.player.resizeContent = function() {
+                var newHeight = $(window).height();
+                var newWidth = $(window).width();
+
+                var controlContainerHeight = newHeight;// - 30;
+                if($('#interfaceControlFrameLogoContainer').is(':visible')) controlContainerHeight -= $('#interfaceControlFrameLogoContainer').outerHeight();// + 16;
+
+                $('#outerContainer').height(newHeight).width(newWidth);
+                $('.vsplitbar').height(newHeight);
+                $('#leftPanel').height(newHeight);
+                $('#interfaceControlFrame').height(newHeight);
+                $('#interfaceControlFrameContainer').height(newHeight);
+                $('#interfaceControlFrameHostContainer').height(controlContainerHeight);
+
+                $('#rightPanel').height(newHeight);
+                $('#mainFrame').height(newHeight);
+
+                if($('#leftPanel').is(':visible')) $('#rightPanel').width($(window).width() - $('#leftPanel').width() - 1);// $('.vsplitbar').width());
+                else $('#rightPanel').width($(window).width());
+
+                $(document).trigger('ContainerHeightChange',[controlContainerHeight]);
+
+                if(MOBILE_DEVICE) {
+                    if(!(getHashStringVar(ADAPTIVE_VIEW_VAR_NAME).length > 0)) $axure.messageCenter.postMessage('setAdaptiveViewForSize', {'width':newWidth, 'height':$('#rightPanel').height()});
+                }
+            }
+
+            var collapseToBar = $axure.player.collapseToBar = function() {
+                lastLeftPanelWidth = $('#leftPanel').width();
+                $('#leftPanel').width('55px');
+                $('.vsplitbar').hide();
+                $('#rightPanel').width($(window).width() - $('#leftPanel').width());
+                $(window).resize();
+                $('#outerContainer').trigger('resize');
+                toolBarOnly = true;
+            }
+
+            var expandFromBar = $axure.player.expandFromBar = function() {
+                if($('.vsplitbar').is(':visible')) return;
+
+                $('#leftPanel').width(lastLeftPanelWidth);
+                $('.vsplitbar').show();
+                $('#rightPanel').width($(window).width() - $('#leftPanel').width() - 1);// $('.vsplitbar').width());
+                $(window).resize();
+                $('#outerContainer').trigger('resize');
+                toolBarOnly = false;
+            }
+
+        })();
+
+        function messageCenter_message(message, data) {
+            if(message == 'expandFrame') expand();
+            else if(message == 'getCollapseFrameOnLoad' && $axure.player.settings.startCollapsed && !MOBILE_DEVICE) $axure.messageCenter.postMessage('collapseFrameOnLoad');
+        }
+
+        
+        function getInitialUrl() {
+            var pageName = getHashStringVar("p");
+            if(pageName.length > 0) return pageName + ".html";
+            else {
+                var url = getFirstPageUrl($axure.document.sitemap.rootNodes);
+                return (url ? url : "about:blank");
+            }
+        }
+
+        function getFirstPageUrl(nodes) {
+            for (var i = 0; i < nodes.length; i++) {
+                var node = nodes[i];
+                if (node.url) return node.url;
+                else {
+                    var hasChildren = (node.children && node.children.length > 0);
+                    if (hasChildren) {
+                        var url = getFirstPageUrl(node.children);
+                        if (url) return url;
+                    }
+                }
+            }
+            return null;
+        }
+
+        function closePlayer() {
+            if($axure.page.location) window.location.href = $axure.page.location;
+            else {
+                var pageFile = getInitialUrl();
+                var currentLocation = window.location.toString();
+                window.location.href = currentLocation.substr(0, currentLocation.lastIndexOf("/") + 1) + pageFile;
+            }
+        }
+
+        function replaceHash(newHash) {
+            var currentLocWithoutHash = window.location.toString().split('#')[0];
+
+            //We use replace so that every hash change doesn't get appended to the history stack.
+            //We use replaceState in browsers that support it, else replace the location
+            if(typeof window.history.replaceState != 'undefined') {
+                try {
+                    //Chrome 45 (Version 45.0.2454.85 m) started throwing an error here when generated locally (this only happens with sitemap open) which broke all interactions.
+                    //try catch breaks the url adjusting nicely when the sitemap is open, but all interactions and forward and back buttons work.
+                    //Uncaught SecurityError: Failed to execute 'replaceState' on 'History': A history state object with URL 'file:///C:/Users/Ian/Documents/Axure/HTML/Untitled/start.html#p=home' cannot be created in a document with origin 'null'.
+                    window.history.replaceState(null, null, currentLocWithoutHash + newHash);
+                } catch(ex) {}
+            } else {
+                window.location.replace(currentLocWithoutHash + newHash);
+            }
+        }
+
+        function collapse() {
+            setVarInCurrentUrlHash('c', 1);
+            if(!toolBarOnly) lastLeftPanelWidth = $('#leftPanel').width();
+
+            $('#maximizePanelContainer').show();
+            $('#leftPanel').hide();
+            $('.vsplitbar').hide();
+            $('#rightPanel').width($(window).width());
+            $(window).resize();
+            $('#outerContainer').trigger('resize');
+
+            $(document).trigger('sidebarCollapse');
+
+            if(MOBILE_DEVICE) {
+                $('#maximizePanelContainer').animate({
+                    top:$('#rightPanel').height() - $('#maximizePanelContainer').height()
+                }, 300, 'swing', function() {
+                    $('#maximizePanelContainer').css('top', 'inherit').css('bottom', '0px');
+                });
+            }
+        }
+
+        function expand() {
+            if(MOBILE_DEVICE) {
+                $('#maximizePanelContainer').css('top', '0px').css('bottom', 'inherit');
+            }
+
+            deleteVarFromCurrentUrlHash('c');
+            $('#maximizePanelContainer').hide();
+            $('#leftPanel').width(lastLeftPanelWidth);
+            $('#leftPanel').show();
+            if(!toolBarOnly) {
+                $('.vsplitbar').show();
+                $('#rightPanel').width($(window).width() - $('#leftPanel').width() - 1);
+            } else {
+                $axure.player.collapseToBar();
+            }
+            $(window).resize();
+            $('#outerContainer').trigger('resize');
+
+            $(document).trigger('sidebarExpanded');
+        }
+
+
+        function mainFrame_onload() {
+            if($axure.page.pageName) document.title = $axure.page.pageName;
+        }
+
+        function getQueryString(query) {
+            var qstring = self.location.href.split("?");
+            if(qstring.length < 2) return "";
+            return GetParameter(qstring, query);
+        }
+        
+        function GetParameter(qstring, query) {
+            var prms = qstring[1].split("&");
+            var frmelements = new Array();
+            var currprmeter, querystr = "";
+
+            for(var i = 0; i < prms.length; i++) {
+                currprmeter = prms[i].split("=");
+                frmelements[i] = new Array();
+                frmelements[i][0] = currprmeter[0];
+                frmelements[i][1] = currprmeter[1];
+            }
+
+            for(j = 0; j < frmelements.length; j++) {
+                if(frmelements[j][0].toLowerCase() == query.toLowerCase()) {
+                    querystr = frmelements[j][1];
+                    break;
+                }
+            }
+            return querystr;
+        }
+        
+        function getHashStringVar(query) {
+            var qstring = self.location.href.split("#");
+            if(qstring.length < 2) return "";
+            return GetParameter(qstring, query);
+        }
+
+        function setHashStringVar(currentHash, varName, varVal) {
+            var varWithEqual = varName + '=';
+            var poundVarWithEqual = varVal === '' ? '' :  '#' + varName + '=' + varVal;
+            var ampVarWithEqual = varVal === '' ? '' :  '&' + varName + '=' + varVal;
+            var hashToSet = '';
+
+            var pageIndex = currentHash.indexOf('#' + varWithEqual);
+            if(pageIndex == -1) pageIndex = currentHash.indexOf('&' + varWithEqual);
+            if(pageIndex != -1) {
+                var newHash = currentHash.substring(0, pageIndex);
+
+                newHash = newHash == '' ? poundVarWithEqual : newHash + ampVarWithEqual;
+
+                var ampIndex = currentHash.indexOf('&', pageIndex + 1);
+                if(ampIndex != -1) {
+                    newHash = newHash == '' ? '#' + currentHash.substring(ampIndex + 1) : newHash + currentHash.substring(ampIndex);
+                }
+                hashToSet = newHash;
+            } else if(currentHash.indexOf('#') != -1) {
+                hashToSet = currentHash + ampVarWithEqual;
+            } else {
+                hashToSet = poundVarWithEqual;
+            }
+
+            if(hashToSet != '' || varVal == '') {
+                return hashToSet;
+            }
+
+            return null;
+        }
+
+        function setVarInCurrentUrlHash(varName, varVal) {
+            var newHash = setHashStringVar(window.location.hash, varName, varVal);
+
+            if(newHash != null) {
+                replaceHash(newHash);
+            }
+        }
+
+        function deleteHashStringVar(currentHash, varName) {
+            var varWithEqual = varName + '=';
+
+            var pageIndex = currentHash.indexOf('#' + varWithEqual);
+            if(pageIndex == -1) pageIndex = currentHash.indexOf('&' + varWithEqual);
+            if(pageIndex != -1) {
+                var newHash = currentHash.substring(0, pageIndex);
+
+                var ampIndex = currentHash.indexOf('&', pageIndex + 1);
+
+                //IF begin of string....if none blank, ELSE # instead of & and rest
+                //IF in string....prefix + if none blank, ELSE &-rest
+                if(newHash == '') { //beginning of string
+                    newHash = ampIndex != -1 ? '#' + currentHash.substring(ampIndex + 1) : '';
+                } else { //somewhere in the middle
+                    newHash = newHash + (ampIndex != -1 ? currentHash.substring(ampIndex) : '');
+                }
+
+                return newHash;
+            }
+
+            return null;
+        }
+
+        function deleteVarFromCurrentUrlHash(varName) {
+            var newHash = deleteHashStringVar(window.location.hash, varName);
+
+            if(newHash != null) {
+                replaceHash(newHash);
+            }
+        }
+    --></script>
+    
+    <link type="text/css" rel="Stylesheet" href="plugins/sitemap/styles/sitemap.css" />
+    <link type="text/css" rel="Stylesheet" href="plugins/page_notes/styles/page_notes.css" />
+    <link type="text/css" rel="Stylesheet" href="plugins/debug/styles/debug.css" />
+    <script src="resources/scripts/startPost.js"></script>
+
+
+    <!--<link type="text/css" rel="Stylesheet" href="plugins/recordplay/styles/recordplay.css" />
+    <script type="text/javascript" src="plugins/recordplay/recordplay.js"></script>-->
+    
+
+</head>
+<body scroll="no" class="hashover">
+    <div id="outerContainer">
+
+        <div id="leftPanel">
+            <div id="interfaceControlFrame">
+                <div id="interfaceControlFrameMinimizeContainer">
+                    <a title="Collapse" id="interfaceControlFrameMinimizeButton" onclick="collapse();">&nbsp;</a>
+                </div>
+                <div id="interfaceControlFrameHeaderContainer">
+                    <ul id="interfaceControlFrameHeader"></ul>
+                </div>
+                <div id="interfaceControlFrameContainer">
+                    <div id="interfaceControlFrameLogoContainer">
+                        <div id="interfaceControlFrameLogoImageContainer"></div>
+                        <div id="interfaceControlFrameLogoCaptionContainer"></div>
                     </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div id="u14_state1" class="panel_state" data-label="State2" style="visibility: hidden;">
-          <div id="u14_state1_content" class="panel_state_content">
-
-            <!-- Unnamed (图片) -->
-            <div id="u22" class="ax_default image">
-              <img id="u22_img" class="img " src="images/index/u22.jpg"/>
-            </div>
-          </div>
-        </div>
-        <div id="u14_state2" class="panel_state" data-label="State3" style="visibility: hidden;">
-          <div id="u14_state2_content" class="panel_state_content">
-
-            <!-- Unnamed (图片) -->
-            <div id="u23" class="ax_default image">
-              <img id="u23_img" class="img " src="images/index/u23.png"/>
-            </div>
-          </div>
-        </div>
-        <div id="u14_state3" class="panel_state" data-label="State4" style="visibility: hidden;">
-          <div id="u14_state3_content" class="panel_state_content">
-
-            <!-- Unnamed (组合) -->
-            <div id="u24" class="ax_default" data-left="0" data-top="0" data-width="300" data-height="400">
-
-              <!-- Unnamed (矩形) -->
-              <div id="u25" class="ax_default box_1">
-                <div id="u25_div" class=""></div>
-              </div>
-
-              <!-- Unnamed (形状) -->
-              <div id="u26" class="ax_default icon">
-                <img id="u26_img" class="img " src="images/index/u26.png"/>
-              </div>
-
-              <!-- Unnamed (组合) -->
-              <div id="u27" class="ax_default" data-left="220" data-top="0" data-width="26" data-height="27">
-
-                <!-- Unnamed (形状) -->
-                <div id="u28" class="ax_default icon">
-                  <img id="u28_img" class="img " src="images/index/u28.png"/>
-                </div>
-              </div>
-
-              <!-- Unnamed (矩形) -->
-              <div id="u29" class="ax_default label">
-                <div id="u29_div" class=""></div>
-                <div id="u29_text" class="text ">
-                  <p><span>我的图片</span></p>
-                </div>
-              </div>
-
-              <!-- Unnamed (组合) -->
-              <div id="u30" class="ax_default ax_default_hidden" style="display:none; visibility: hidden" data-left="0" data-top="0" data-width="0" data-height="0">
-
-                <!-- Unnamed (矩形) -->
-                <div id="u31" class="ax_default box_1">
-                  <div id="u31_div" class=""></div>
-                  <div id="u31_text" class="text ">
-                    <p><span>删除</span></p>
-                  </div>
-                </div>
-
-                <!-- Unnamed (矩形) -->
-                <div id="u32" class="ax_default box_1">
-                  <div id="u32_div" class=""></div>
-                  <div id="u32_text" class="text ">
-                    <p><span>编辑</span></p>
-                  </div>
-                </div>
-
-                <!-- Unnamed (矩形) -->
-                <div id="u33" class="ax_default box_1">
-                  <div id="u33_div" class=""></div>
-                  <div id="u33_text" class="text ">
-                    <p><span>取消</span></p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Unnamed (图片) -->
-              <div id="u34" class="ax_default image">
-                <img id="u34_img" class="img " src="images/index/u34.png"/>
-              </div>
-
-              <!-- Unnamed (图片) -->
-              <div id="u35" class="ax_default image">
-                <img id="u35_img" class="img " src="images/index/u34.png"/>
-              </div>
-
-              <!-- Unnamed (图片) -->
-              <div id="u36" class="ax_default image">
-                <img id="u36_img" class="img " src="images/index/u34.png"/>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 顶部菜单 (矩形) -->
-      <div id="u37" class="ax_default box_2" data-label="顶部菜单">
-        <div id="u37_div" class=""></div>
-      </div>
-
-      <!-- Unnamed (矩形) -->
-      <div id="u38" class="ax_default button">
-        <div id="u38_div" class=""></div>
-        <div id="u38_text" class="text ">
-          <p><span>收藏</span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (组合) -->
-      <div id="u39" class="ax_default" data-left="790" data-top="200" data-width="350" data-height="637">
-
-        <!-- Unnamed (组合) -->
-        <div id="u40" class="ax_default" data-left="790" data-top="200" data-width="350" data-height="637">
-
-          <!-- 底部菜单 (矩形) -->
-          <div id="u41" class="ax_default box_2 selected" data-label="底部菜单">
-            <div id="u41_div" class="selected"></div>
-          </div>
-
-          <!-- Unnamed (形状) -->
-          <div id="u42" class="ax_default icon selected">
-            <img id="u42_img" class="img " src="images/index/u42.png"/>
-          </div>
-
-          <!-- Unnamed (矩形) -->
-          <div id="u43" class="ax_default label selected">
-            <div id="u43_div" class="selected"></div>
-            <div id="u43_text" class="text ">
-              <p><span>77777房间</span></p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Unnamed (矩形) -->
-        <div id="u44" class="ax_default button">
-          <div id="u44_div" class=""></div>
-          <div id="u44_text" class="text ">
-            <p><span>主聊天</span></p>
-          </div>
-        </div>
-
-        <!-- Unnamed (矩形) -->
-        <div id="u45" class="ax_default button">
-          <div id="u45_div" class=""></div>
-          <div id="u45_text" class="text ">
-            <p><span>文字</span></p>
-          </div>
-        </div>
-
-        <!-- Unnamed (矩形) -->
-        <div id="u46" class="ax_default button">
-          <div id="u46_div" class=""></div>
-          <div id="u46_text" class="text ">
-            <p><span>图片</span></p>
-          </div>
-        </div>
-
-        <!-- Unnamed (矩形) -->
-        <div id="u47" class="ax_default button">
-          <div id="u47_div" class=""></div>
-          <div id="u47_text" class="text ">
-            <p><span>长文章</span></p>
-          </div>
-        </div>
-
-        <!-- Unnamed (矩形) -->
-        <div id="u48" class="ax_default button selected">
-          <div id="u48_div" class="selected"></div>
-          <div id="u48_text" class="text ">
-            <p><span>开麦</span></p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Unnamed (组合) -->
-      <div id="u49" class="ax_default ax_default_hidden" style="display:none; visibility: hidden" data-left="0" data-top="0" data-width="0" data-height="0">
-
-        <!-- Unnamed (矩形) -->
-        <div id="u50" class="ax_default box_1">
-          <div id="u50_div" class=""></div>
-          <div id="u50_text" class="text ">
-            <p><span>投票解散</span></p>
-          </div>
-        </div>
-
-        <!-- Unnamed (矩形) -->
-        <div id="u51" class="ax_default box_1">
-          <div id="u51_div" class=""></div>
-          <div id="u51_text" class="text ">
-            <p><span>退出房间</span></p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Unnamed (组合) -->
-      <div id="u52" class="ax_default ax_default_hidden" style="display:none; visibility: hidden" data-left="0" data-top="0" data-width="0" data-height="0">
-
-        <!-- Unnamed (矩形) -->
-        <div id="u53" class="ax_default box_1 ax_default_hidden" style="display:none; visibility: hidden">
-          <div id="u53_div" class=""></div>
-        </div>
-
-        <!-- Unnamed (文本框) -->
-        <div id="u54" class="ax_default text_field ax_default_hidden" style="display:none; visibility: hidden">
-          <input id="u54_input" type="text" value="请选择角色进行投票"/>
-        </div>
-
-        <!-- Unnamed (矩形) -->
-        <div id="u55" class="ax_default primary_button ax_default_hidden" style="display:none; visibility: hidden">
-          <div id="u55_div" class=""></div>
-          <div id="u55_text" class="text ">
-            <p><span>确定</span></p>
-          </div>
-        </div>
-
-        <!-- Unnamed (复选框) -->
-        <div id="u56" class="ax_default checkbox ax_default_hidden" style="display:none; visibility: hidden">
-          <label for="u56_input" style="position: absolute; left: 0px;">
-            <div id="u56_text" class="text ">
-              <p><span>1号</span></p>
-            </div>
-          </label>
-          <input id="u56_input" type="checkbox" value="checkbox"/>
-        </div>
-
-        <!-- Unnamed (复选框) -->
-        <div id="u57" class="ax_default checkbox ax_default_hidden" style="display:none; visibility: hidden">
-          <label for="u57_input" style="position: absolute; left: 0px;">
-            <div id="u57_text" class="text ">
-              <p><span>2号</span></p>
-            </div>
-          </label>
-          <input id="u57_input" type="checkbox" value="checkbox"/>
-        </div>
-
-        <!-- Unnamed (复选框) -->
-        <div id="u58" class="ax_default checkbox ax_default_hidden" style="display:none; visibility: hidden">
-          <label for="u58_input" style="position: absolute; left: 0px;">
-            <div id="u58_text" class="text ">
-              <p><span>3号</span></p>
-            </div>
-          </label>
-          <input id="u58_input" type="checkbox" value="checkbox"/>
-        </div>
-
-        <!-- Unnamed (矩形) -->
-        <div id="u59" class="ax_default primary_button ax_default_hidden" style="display:none; visibility: hidden">
-          <div id="u59_div" class=""></div>
-          <div id="u59_text" class="text ">
-            <p><span>返回</span></p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Unnamed (图片) -->
-      <div id="u60" class="ax_default _图片">
-        <img id="u60_img" class="img " src="images/index/u0.png"/>
-      </div>
-
-      <!-- Unnamed (连接线) -->
-      <div id="u61" class="ax_default _连接线">
-        <img id="u61_seg0" class="img " src="images/index/u61_seg0.png" alt="u61_seg0"/>
-        <img id="u61_seg1" class="img " src="images/index/u61_seg1.png" alt="u61_seg1"/>
-        <img id="u61_seg2" class="img " src="images/index/u61_seg2.png" alt="u61_seg2"/>
-        <img id="u61_seg3" class="img " src="images/index/u61_seg3.png" alt="u61_seg3"/>
-        <div id="u61_text" class="text " style="display:none; visibility: hidden">
-          <p></p>
-        </div>
-      </div>
-
-      <!-- 顶部菜单 (矩形) -->
-      <div id="u62" class="ax_default box_2" data-label="顶部菜单">
-        <div id="u62_div" class=""></div>
-      </div>
-
-      <!-- Unnamed (形状) -->
-      <div id="u63" class="ax_default icon">
-        <img id="u63_img" class="img " src="images/index/u63.png"/>
-      </div>
-
-      <!-- Unnamed (文本框) -->
-      <div id="u64" class="ax_default text_field">
-        <input id="u64_input" type="text" value=""/>
-      </div>
-
-      <!-- Unnamed (矩形) -->
-      <div id="u65" class="ax_default primary_button">
-        <div id="u65_div" class=""></div>
-        <div id="u65_text" class="text ">
-          <p><span>确定</span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (图片) -->
-      <div id="u66" class="ax_default _图片">
-        <img id="u66_img" class="img " src="images/index/u0.png"/>
-      </div>
-
-      <!-- Unnamed (矩形) -->
-      <div id="u67" class="ax_default primary_button ax_default_hidden" style="display:none; visibility: hidden">
-        <div id="u67_div" class=""></div>
-        <div id="u67_text" class="text ">
-          <p><span>开麦</span></p>
-        </div>
-      </div>
-
-      <!-- 中间切换页 (动态面板) -->
-      <div id="u68" class="ax_default" data-label="中间切换页">
-        <div id="u68_state0" class="panel_state" data-label="State1" style="">
-          <div id="u68_state0_content" class="panel_state_content">
-
-            <!-- 屏幕 (动态面板) -->
-            <div id="u69" class="ax_default" data-label="屏幕">
-              <div id="u69_state0" class="panel_state" data-label="State1" style="">
-                <div id="u69_state0_content" class="panel_state_content">
-
-                  <!-- 内容 (动态面板) -->
-                  <div id="u70" class="ax_default" data-label="内容">
-                    <div id="u70_state0" class="panel_state" data-label="State1" style="">
-                      <div id="u70_state0_content" class="panel_state_content">
-
-                        <!-- Unnamed (图片) -->
-                        <div id="u71" class="ax_default image">
-                          <img id="u71_img" class="img " src="images/index/u17.png"/>
-                        </div>
-
-                        <!-- 第一页 (矩形) -->
-                        <div id="u72" class="ax_default box_1 ax_default_hidden" data-label="第一页" style="display:none; visibility: hidden">
-                          <div id="u72_div" class=""></div>
-                        </div>
-
-                        <!-- Unnamed (图片) -->
-                        <div id="u73" class="ax_default image">
-                          <img id="u73_img" class="img " src="images/index/u3.png"/>
-                        </div>
-
-                        <!-- 第二页 (矩形) -->
-                        <div id="u74" class="ax_default box_1 ax_default_hidden" data-label="第二页" style="display:none; visibility: hidden">
-                          <div id="u74_div" class=""></div>
-                        </div>
-
-                        <!-- Unnamed (图片) -->
-                        <div id="u75" class="ax_default image">
-                          <img id="u75_img" class="img " src="images/index/u3.png"/>
-                        </div>
-                      </div>
+                    <div id="interfaceControlFrameHostContainer">
                     </div>
-                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div id="u68_state1" class="panel_state" data-label="State2" style="visibility: hidden;">
-          <div id="u68_state1_content" class="panel_state_content">
-
-            <!-- Unnamed (图片) -->
-            <div id="u76" class="ax_default image">
-              <img id="u76_img" class="img " src="images/index/u22.jpg"/>
-            </div>
-          </div>
-        </div>
-        <div id="u68_state2" class="panel_state" data-label="State3" style="visibility: hidden;">
-          <div id="u68_state2_content" class="panel_state_content">
-
-            <!-- Unnamed (图片) -->
-            <div id="u77" class="ax_default image">
-              <img id="u77_img" class="img " src="images/index/u23.png"/>
-            </div>
-          </div>
-        </div>
-        <div id="u68_state3" class="panel_state" data-label="State4" style="visibility: hidden;">
-          <div id="u68_state3_content" class="panel_state_content">
-
-            <!-- Unnamed (组合) -->
-            <div id="u78" class="ax_default" data-left="0" data-top="0" data-width="300" data-height="400">
-
-              <!-- Unnamed (矩形) -->
-              <div id="u79" class="ax_default box_1">
-                <div id="u79_div" class=""></div>
-              </div>
-
-              <!-- Unnamed (形状) -->
-              <div id="u80" class="ax_default icon">
-                <img id="u80_img" class="img " src="images/index/u26.png"/>
-              </div>
-
-              <!-- Unnamed (组合) -->
-              <div id="u81" class="ax_default" data-left="220" data-top="0" data-width="26" data-height="27">
-
-                <!-- Unnamed (形状) -->
-                <div id="u82" class="ax_default icon">
-                  <img id="u82_img" class="img " src="images/index/u28.png"/>
+                <div id="interfaceControlFrameCloseContainer">
+                    <a title="Close" id="interfaceControlFrameCloseButton" onclick="closePlayer();">CLOSE</a>
                 </div>
-              </div>
-
-              <!-- Unnamed (矩形) -->
-              <div id="u83" class="ax_default label">
-                <div id="u83_div" class=""></div>
-                <div id="u83_text" class="text ">
-                  <p><span>我的图片</span></p>
-                </div>
-              </div>
-
-              <!-- Unnamed (组合) -->
-              <div id="u84" class="ax_default ax_default_hidden" style="display:none; visibility: hidden" data-left="0" data-top="0" data-width="0" data-height="0">
-
-                <!-- Unnamed (矩形) -->
-                <div id="u85" class="ax_default box_1">
-                  <div id="u85_div" class=""></div>
-                  <div id="u85_text" class="text ">
-                    <p><span>删除</span></p>
-                  </div>
-                </div>
-
-                <!-- Unnamed (矩形) -->
-                <div id="u86" class="ax_default box_1">
-                  <div id="u86_div" class=""></div>
-                  <div id="u86_text" class="text ">
-                    <p><span>编辑</span></p>
-                  </div>
-                </div>
-
-                <!-- Unnamed (矩形) -->
-                <div id="u87" class="ax_default box_1">
-                  <div id="u87_div" class=""></div>
-                  <div id="u87_text" class="text ">
-                    <p><span>取消</span></p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Unnamed (图片) -->
-              <div id="u88" class="ax_default image">
-                <img id="u88_img" class="img " src="images/index/u34.png"/>
-              </div>
-
-              <!-- Unnamed (图片) -->
-              <div id="u89" class="ax_default image">
-                <img id="u89_img" class="img " src="images/index/u34.png"/>
-              </div>
-
-              <!-- Unnamed (图片) -->
-              <div id="u90" class="ax_default image">
-                <img id="u90_img" class="img " src="images/index/u34.png"/>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
-
-      <!-- 顶部菜单 (矩形) -->
-      <div id="u91" class="ax_default box_2" data-label="顶部菜单">
-        <div id="u91_div" class=""></div>
-      </div>
-
-      <!-- Unnamed (矩形) -->
-      <div id="u92" class="ax_default button">
-        <div id="u92_div" class=""></div>
-        <div id="u92_text" class="text ">
-          <p><span>收藏</span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (组合) -->
-      <div id="u93" class="ax_default" data-left="2225" data-top="200" data-width="350" data-height="637">
-
-        <!-- Unnamed (组合) -->
-        <div id="u94" class="ax_default" data-left="2225" data-top="200" data-width="350" data-height="637">
-
-          <!-- 底部菜单 (矩形) -->
-          <div id="u95" class="ax_default box_2 selected" data-label="底部菜单">
-            <div id="u95_div" class="selected"></div>
-          </div>
-
-          <!-- Unnamed (形状) -->
-          <div id="u96" class="ax_default icon selected">
-            <img id="u96_img" class="img " src="images/index/u42.png"/>
-          </div>
-
-          <!-- Unnamed (矩形) -->
-          <div id="u97" class="ax_default label selected">
-            <div id="u97_div" class="selected"></div>
-            <div id="u97_text" class="text ">
-              <p><span>XXX房间</span></p>
-            </div>
-          </div>
+        <div id="rightPanel">
+            <iframe id="mainFrame" name="mainFrame" width="100%" height="100%" src="" frameborder="0" style="display: block;" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
         </div>
 
-        <!-- Unnamed (矩形) -->
-        <div id="u98" class="ax_default button">
-          <div id="u98_div" class=""></div>
-          <div id="u98_text" class="text ">
-            <p><span>加入</span></p>
-          </div>
-        </div>
-
-        <!-- Unnamed (矩形) -->
-        <div id="u99" class="ax_default button">
-          <div id="u99_div" class=""></div>
-          <div id="u99_text" class="text ">
-            <p><span>文字</span></p>
-          </div>
-        </div>
-
-        <!-- Unnamed (矩形) -->
-        <div id="u100" class="ax_default button">
-          <div id="u100_div" class=""></div>
-          <div id="u100_text" class="text ">
-            <p><span>图片</span></p>
-          </div>
-        </div>
-
-        <!-- Unnamed (矩形) -->
-        <div id="u101" class="ax_default button">
-          <div id="u101_div" class=""></div>
-          <div id="u101_text" class="text ">
-            <p><span>长文章</span></p>
-          </div>
-        </div>
-
-        <!-- Unnamed (矩形) -->
-        <div id="u102" class="ax_default button selected">
-          <div id="u102_div" class="selected"></div>
-          <div id="u102_text" class="text ">
-            <p><span>开麦</span></p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Unnamed (组合) -->
-      <div id="u103" class="ax_default ax_default_hidden" style="display:none; visibility: hidden" data-left="0" data-top="0" data-width="0" data-height="0">
-
-        <!-- Unnamed (矩形) -->
-        <div id="u104" class="ax_default box_1">
-          <div id="u104_div" class=""></div>
-          <div id="u104_text" class="text ">
-            <p><span>投票解散</span></p>
-          </div>
-        </div>
-
-        <!-- Unnamed (矩形) -->
-        <div id="u105" class="ax_default box_1">
-          <div id="u105_div" class=""></div>
-          <div id="u105_text" class="text ">
-            <p><span>退出房间</span></p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Unnamed (组合) -->
-      <div id="u106" class="ax_default ax_default_hidden" style="display:none; visibility: hidden" data-left="0" data-top="0" data-width="0" data-height="0">
-
-        <!-- Unnamed (矩形) -->
-        <div id="u107" class="ax_default box_1 ax_default_hidden" style="display:none; visibility: hidden">
-          <div id="u107_div" class=""></div>
-        </div>
-
-        <!-- Unnamed (文本框) -->
-        <div id="u108" class="ax_default text_field ax_default_hidden" style="display:none; visibility: hidden">
-          <input id="u108_input" type="text" value="请选择角色进行投票"/>
-        </div>
-
-        <!-- Unnamed (矩形) -->
-        <div id="u109" class="ax_default primary_button ax_default_hidden" style="display:none; visibility: hidden">
-          <div id="u109_div" class=""></div>
-          <div id="u109_text" class="text ">
-            <p><span>确定</span></p>
-          </div>
-        </div>
-
-        <!-- Unnamed (复选框) -->
-        <div id="u110" class="ax_default checkbox ax_default_hidden" style="display:none; visibility: hidden">
-          <label for="u110_input" style="position: absolute; left: 0px;">
-            <div id="u110_text" class="text ">
-              <p><span>1号</span></p>
-            </div>
-          </label>
-          <input id="u110_input" type="checkbox" value="checkbox"/>
-        </div>
-
-        <!-- Unnamed (复选框) -->
-        <div id="u111" class="ax_default checkbox ax_default_hidden" style="display:none; visibility: hidden">
-          <label for="u111_input" style="position: absolute; left: 0px;">
-            <div id="u111_text" class="text ">
-              <p><span>2号</span></p>
-            </div>
-          </label>
-          <input id="u111_input" type="checkbox" value="checkbox"/>
-        </div>
-
-        <!-- Unnamed (复选框) -->
-        <div id="u112" class="ax_default checkbox ax_default_hidden" style="display:none; visibility: hidden">
-          <label for="u112_input" style="position: absolute; left: 0px;">
-            <div id="u112_text" class="text ">
-              <p><span>3号</span></p>
-            </div>
-          </label>
-          <input id="u112_input" type="checkbox" value="checkbox"/>
-        </div>
-
-        <!-- Unnamed (矩形) -->
-        <div id="u113" class="ax_default primary_button ax_default_hidden" style="display:none; visibility: hidden">
-          <div id="u113_div" class=""></div>
-          <div id="u113_text" class="text ">
-            <p><span>返回</span></p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Unnamed (连接线) -->
-      <div id="u114" class="ax_default _连接线">
-        <img id="u114_seg0" class="img " src="images/index/u114_seg0.png" alt="u114_seg0"/>
-        <img id="u114_seg1" class="img " src="images/index/u114_seg1.png" alt="u114_seg1"/>
-        <div id="u114_text" class="text " style="display:none; visibility: hidden">
-          <p></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (文本框) -->
-      <div id="u115" class="ax_default text_field">
-        <input id="u115_input" type="text" value=""/>
-      </div>
-
-      <!-- Unnamed (复选框) -->
-      <div id="u116" class="ax_default checkbox">
-        <label for="u116_input" style="position: absolute; left: 0px;">
-          <div id="u116_text" class="text ">
-            <p><span>所有人开放</span></p>
-          </div>
-        </label>
-        <input id="u116_input" type="checkbox" value="checkbox"/>
-      </div>
-
-      <!-- Unnamed (矩形) -->
-      <div id="u117" class="ax_default label">
-        <div id="u117_div" class=""></div>
-        <div id="u117_text" class="text ">
-          <p><span>房间名</span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (矩形) -->
-      <div id="u118" class="ax_default label">
-        <div id="u118_div" class=""></div>
-        <div id="u118_text" class="text ">
-          <p><span>密码</span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (文本框) -->
-      <div id="u119" class="ax_default text_field">
-        <input id="u119_input" type="text" value=""/>
-      </div>
-
-      <!-- Unnamed (提交按钮) -->
-      <div id="u120" class="ax_default html_button">
-        <input id="u120_input" type="submit" value="提交"/>
-      </div>
-
-      <!-- 顶部菜单 (矩形) -->
-      <div id="u121" class="ax_default box_2" data-label="顶部菜单">
-        <div id="u121_div" class=""></div>
-      </div>
-
-      <!-- Unnamed (形状) -->
-      <div id="u122" class="ax_default icon">
-        <img id="u122_img" class="img " src="images/index/u122.png"/>
-      </div>
-
-      <!-- Unnamed (占位符) -->
-      <div id="u123" class="ax_default placeholder">
-        <img id="u123_img" class="img " src="images/index/u123.png"/>
-        <div id="u123_text" class="text ">
-          <p><span>推荐</span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (动态面板) -->
-      <div id="u124" class="ax_default">
-        <div id="u124_state0" class="panel_state" data-label="State1" style="">
-          <div id="u124_state0_content" class="panel_state_content">
-
-            <!-- Unnamed (图片) -->
-            <div id="u125" class="ax_default image">
-              <img id="u125_img" class="img " src="images/index/u125.png"/>
-            </div>
-
-            <!-- Unnamed (图片) -->
-            <div id="u126" class="ax_default image">
-              <img id="u126_img" class="img " src="images/index/u126.png"/>
-            </div>
-
-            <!-- Unnamed (图片) -->
-            <div id="u127" class="ax_default image">
-              <img id="u127_img" class="img " src="images/index/u127.png"/>
-            </div>
-
-            <!-- Unnamed (图片) -->
-            <div id="u128" class="ax_default image">
-              <img id="u128_img" class="img " src="images/index/u128.png"/>
-            </div>
-
-            <!-- Unnamed (图片) -->
-            <div id="u129" class="ax_default image">
-              <img id="u129_img" class="img " src="images/index/u129.png"/>
-            </div>
-
-            <!-- Unnamed (图片) -->
-            <div id="u130" class="ax_default image">
-              <img id="u130_img" class="img " src="images/index/u130.png"/>
-            </div>
-          </div>
-        </div>
-        <div id="u124_state1" class="panel_state" data-label="State2" style="visibility: hidden;">
-          <div id="u124_state1_content" class="panel_state_content">
-
-            <!-- Unnamed (占位符) -->
-            <div id="u131" class="ax_default placeholder">
-              <img id="u131_img" class="img " src="images/index/u131.png"/>
-            </div>
-
-            <!-- Unnamed (占位符) -->
-            <div id="u132" class="ax_default placeholder">
-              <img id="u132_img" class="img " src="images/index/u132.png"/>
-            </div>
-
-            <!-- Unnamed (占位符) -->
-            <div id="u133" class="ax_default placeholder">
-              <img id="u133_img" class="img " src="images/index/u133.png"/>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Unnamed (矩形) -->
-      <div id="u134" class="ax_default label">
-        <div id="u134_div" class=""></div>
-        <div id="u134_text" class="text ">
-          <p><span>猜你喜欢</span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (连接线) -->
-      <div id="u135" class="ax_default _连接线">
-        <img id="u135_seg0" class="img " src="images/index/u135_seg0.png" alt="u135_seg0"/>
-        <img id="u135_seg1" class="img " src="images/index/u135_seg1.png" alt="u135_seg1"/>
-        <img id="u135_seg2" class="img " src="images/index/u135_seg2.png" alt="u135_seg2"/>
-        <div id="u135_text" class="text " style="display:none; visibility: hidden">
-          <p></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (图片) -->
-      <div id="u136" class="ax_default _图片">
-        <img id="u136_img" class="img " src="images/index/u0.png"/>
-      </div>
-
-      <!-- Unnamed (图片) -->
-      <div id="u137" class="ax_default _图片">
-        <img id="u137_img" class="img " src="images/index/u0.png"/>
-      </div>
-
-      <!-- Unnamed (图片) -->
-      <div id="u138" class="ax_default _图片">
-        <img id="u138_img" class="img " src="images/index/u0.png"/>
-      </div>
-
-      <!-- Unnamed (图片) -->
-      <div id="u139" class="ax_default _图片">
-        <img id="u139_img" class="img " src="images/index/u0.png"/>
-      </div>
-
-      <!-- Unnamed (图片) -->
-      <div id="u140" class="ax_default _图片">
-        <img id="u140_img" class="img " src="images/index/u0.png"/>
-      </div>
-
-      <!-- Unnamed (连接线) -->
-      <div id="u141" class="ax_default _连接线">
-        <img id="u141_seg0" class="img " src="images/index/u61_seg0.png" alt="u141_seg0"/>
-        <img id="u141_seg1" class="img " src="images/index/u141_seg1.png" alt="u141_seg1"/>
-        <img id="u141_seg2" class="img " src="images/index/u141_seg2.png" alt="u141_seg2"/>
-        <div id="u141_text" class="text " style="display:none; visibility: hidden">
-          <p></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (连接线) -->
-      <div id="u142" class="ax_default _连接线">
-        <img id="u142_seg0" class="img " src="images/index/u61_seg0.png" alt="u142_seg0"/>
-        <img id="u142_seg1" class="img " src="images/index/u61_seg1.png" alt="u142_seg1"/>
-        <img id="u142_seg2" class="img " src="images/index/u142_seg2.png" alt="u142_seg2"/>
-        <div id="u142_text" class="text " style="display:none; visibility: hidden">
-          <p></p>
-        </div>
-      </div>
-
-      <!-- 顶部菜单 (矩形) -->
-      <div id="u143" class="ax_default box_2" data-label="顶部菜单">
-        <div id="u143_div" class=""></div>
-      </div>
-
-      <!-- Unnamed (矩形) -->
-      <div id="u144" class="ax_default label">
-        <div id="u144_div" class=""></div>
-        <div id="u144_text" class="text ">
-          <p><span>我的房间</span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (矩形) -->
-      <div id="u145" class="ax_default button">
-        <div id="u145_div" class=""></div>
-        <div id="u145_text" class="text ">
-          <p><span>管理</span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (组合) -->
-      <div id="u146" class="ax_default" data-left="790" data-top="1261" data-width="350" data-height="637">
-
-        <!-- Unnamed (组合) -->
-        <div id="u147" class="ax_default" data-left="790" data-top="1261" data-width="350" data-height="637">
-
-          <!-- 底部菜单 (矩形) -->
-          <div id="u148" class="ax_default box_2 selected" data-label="底部菜单">
-            <div id="u148_div" class="selected"></div>
-          </div>
-
-          <!-- Unnamed (形状) -->
-          <div id="u149" class="ax_default icon selected">
-            <img id="u149_img" class="img " src="images/index/u42.png"/>
-          </div>
-
-          <!-- Unnamed (矩形) -->
-          <div id="u150" class="ax_default label selected">
-            <div id="u150_div" class="selected"></div>
-          </div>
-        </div>
-
-        <!-- Unnamed (矩形) -->
-        <div id="u151" class="ax_default button">
-          <div id="u151_div" class=""></div>
-          <div id="u151_text" class="text ">
-            <p><span>主页</span></p>
-          </div>
-        </div>
-
-        <!-- Unnamed (矩形) -->
-        <div id="u152" class="ax_default button">
-          <div id="u152_div" class=""></div>
-          <div id="u152_text" class="text ">
-            <p><span>文字</span></p>
-          </div>
-        </div>
-
-        <!-- Unnamed (矩形) -->
-        <div id="u153" class="ax_default button">
-          <div id="u153_div" class=""></div>
-          <div id="u153_text" class="text ">
-            <p><span>图片</span></p>
-          </div>
-        </div>
-
-        <!-- Unnamed (矩形) -->
-        <div id="u154" class="ax_default button">
-          <div id="u154_div" class=""></div>
-          <div id="u154_text" class="text ">
-            <p><span>长文章</span></p>
-          </div>
-        </div>
-
-        <!-- Unnamed (矩形) -->
-        <div id="u155" class="ax_default button selected">
-          <div id="u155_div" class="selected"></div>
-          <div id="u155_text" class="text ">
-            <p><span>开麦</span></p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Unnamed (连接线) -->
-      <div id="u156" class="ax_default _连接线">
-        <img id="u156_seg0" class="img " src="images/index/u156_seg0.png" alt="u156_seg0"/>
-        <img id="u156_seg1" class="img " src="images/index/u156_seg1.png" alt="u156_seg1"/>
-        <img id="u156_seg2" class="img " src="images/index/u156_seg2.png" alt="u156_seg2"/>
-        <div id="u156_text" class="text " style="display:none; visibility: hidden">
-          <p></p>
-        </div>
-      </div>
-
-      <!-- 顶部菜单 (矩形) -->
-      <div id="u157" class="ax_default box_2" data-label="顶部菜单">
-        <div id="u157_div" class=""></div>
-      </div>
-
-      <!-- Unnamed (组合) -->
-      <div id="u158" class="ax_default" data-left="1518" data-top="1261" data-width="350" data-height="637">
-
-        <!-- Unnamed (组合) -->
-        <div id="u159" class="ax_default" data-left="1518" data-top="1261" data-width="350" data-height="637">
-
-          <!-- 底部菜单 (矩形) -->
-          <div id="u160" class="ax_default box_2 selected" data-label="底部菜单">
-            <div id="u160_div" class="selected"></div>
-          </div>
-
-          <!-- Unnamed (形状) -->
-          <div id="u161" class="ax_default icon selected">
-            <img id="u161_img" class="img " src="images/index/u42.png"/>
-          </div>
-
-          <!-- Unnamed (矩形) -->
-          <div id="u162" class="ax_default label selected">
-            <div id="u162_div" class="selected"></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Unnamed (矩形) -->
-      <div id="u163" class="ax_default box_1">
-        <div id="u163_div" class=""></div>
-        <div id="u163_text" class="text ">
-          <p><span>允许要去好友&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (矩形) -->
-      <div id="u164" class="ax_default box_1">
-        <div id="u164_div" class=""></div>
-        <div id="u164_text" class="text ">
-          <p><span>显示聊天时间轴&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (矩形) -->
-      <div id="u165" class="ax_default box_1">
-        <div id="u165_div" class=""></div>
-        <div id="u165_text" class="text ">
-          <p><span>显示未加入人数&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (矩形) -->
-      <div id="u166" class="ax_default box_1">
-        <div id="u166_div" class=""></div>
-        <div id="u166_text" class="text ">
-          <p><span>全体禁言&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (形状) -->
-      <div id="u167" class="ax_default icon">
-        <img id="u167_img" class="img " src="images/index/u167.png"/>
-      </div>
-
-      <!-- Unnamed (形状) -->
-      <div id="u168" class="ax_default icon">
-        <img id="u168_img" class="img " src="images/index/u167.png"/>
-      </div>
-
-      <!-- Unnamed (形状) -->
-      <div id="u169" class="ax_default icon">
-        <img id="u169_img" class="img " src="images/index/u167.png"/>
-      </div>
-
-      <!-- Unnamed (形状) -->
-      <div id="u170" class="ax_default icon">
-        <img id="u170_img" class="img " src="images/index/u167.png"/>
-      </div>
-
-      <!-- 顶部菜单 (矩形) -->
-      <div id="u171" class="ax_default box_2" data-label="顶部菜单">
-        <div id="u171_div" class=""></div>
-      </div>
-
-      <!-- Unnamed (连接线) -->
-      <div id="u172" class="ax_default _连接线">
-        <img id="u172_seg0" class="img " src="images/index/u172_seg0.png" alt="u172_seg0"/>
-        <img id="u172_seg1" class="img " src="images/index/u172_seg1.png" alt="u172_seg1"/>
-        <img id="u172_seg2" class="img " src="images/index/u172_seg2.png" alt="u172_seg2"/>
-        <img id="u172_seg3" class="img " src="images/index/u172_seg3.png" alt="u172_seg3"/>
-        <div id="u172_text" class="text " style="display:none; visibility: hidden">
-          <p></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (矩形) -->
-      <div id="u173" class="ax_default box_3">
-        <div id="u173_div" class=""></div>
-        <div id="u173_text" class="text ">
-          <p><span>人气聊天，待加入</span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (动态面板) -->
-      <div id="u174" class="ax_default">
-        <div id="u174_state0" class="panel_state" data-label="State1" style="">
-          <div id="u174_state0_content" class="panel_state_content">
-
-            <!-- Unnamed (矩形) -->
-            <div id="u175" class="ax_default box_3">
-              <div id="u175_div" class=""></div>
-              <div id="u175_text" class="text ">
-                <p><span>偶遇聊天1</span></p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div id="u174_state1" class="panel_state" data-label="State2" style="visibility: hidden;">
-          <div id="u174_state1_content" class="panel_state_content">
-
-            <!-- Unnamed (矩形) -->
-            <div id="u176" class="ax_default box_3">
-              <div id="u176_div" class=""></div>
-              <div id="u176_text" class="text ">
-                <p><span>偶遇聊天2</span></p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div id="u174_state2" class="panel_state" data-label="State3" style="visibility: hidden;">
-          <div id="u174_state2_content" class="panel_state_content">
-
-            <!-- Unnamed (矩形) -->
-            <div id="u177" class="ax_default box_2">
-              <div id="u177_div" class=""></div>
-              <div id="u177_text" class="text ">
-                <p><span>偶遇聊天3</span></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Unnamed (矩形) -->
-      <div id="u178" class="ax_default button">
-        <div id="u178_div" class=""></div>
-        <div id="u178_text" class="text ">
-          <p><span>换一批</span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (矩形) -->
-      <div id="u179" class="ax_default _文本段落">
-        <img id="u179_img" class="img " src="images/index/u179.png"/>
-        <div id="u179_text" class="text ">
-          <p style="font-size:28px;"><span style="font-family:'Arial Negreta', 'Arial Normal', 'Arial';font-weight:700;">&#149; 首页面</span></p><p style="font-size:28px;"><span style="font-family:'Arial Negreta', 'Arial Normal', 'Arial';font-weight:700;">&#149; .打开APP，默认进入首页页面</span></p><p style="font-size:16px;"><span style="font-family:'Arial Normal', 'Arial';font-weight:400;"><br></span></p><p style="font-size:28px;"><span style="font-family:'Arial Negreta', 'Arial Normal', 'Arial';font-weight:700;">首页设置的房间区域，点击其中一个房间选项可进入相对应功能的房间</span></p><p style="font-size:28px;"><span style="font-family:'Arial Negreta', 'Arial Normal', 'Arial';font-weight:700;"><br></span></p><p style="font-size:28px;"><span style="font-family:'Arial Negreta', 'Arial Normal', 'Arial';font-weight:700;">大厅：点击后可浏览大厅房间，</span><span style="font-family:'Arial Normal', 'Arial';font-weight:400;">且可选择</span><span style="font-family:'Arial Negreta', 'Arial Normal', 'Arial';font-weight:700;">偶遇聊天房间</span></p><p style="font-size:28px;"><span style="font-family:'Arial Negreta', 'Arial Normal', 'Arial';font-weight:700;">最热门：点击后可浏览系统算法得出的最受欢迎聊天房间</span></p><p style="font-size:28px;"><span style="font-family:'Arial Negreta', 'Arial Normal', 'Arial';font-weight:700;">&#149; </span></p><p style="font-size:28px;"><span style="font-family:'Arial Negreta', 'Arial Normal', 'Arial';font-weight:700;">&#149; </span></p><p style="font-size:28px;"><span style="font-family:'Arial Negreta', 'Arial Normal', 'Arial';font-weight:700;">&#149; 房间内游戏页面</span></p><p style="font-size:28px;"><span style="font-family:'Arial Negreta', 'Arial Normal', 'Arial';font-weight:700;">&#149; </span><span style="font-family:'Arial Normal', 'Arial';font-weight:400;">页面下方菜单有为</span><span style="font-family:'Arial Negreta', 'Arial Normal', 'Arial';font-weight:700;">主聊天，开麦，图片，文字，长文章</span><span style="font-family:'Arial Normal', 'Arial';font-weight:400;">功能按钮，点击按钮跳转到指定页面</span><span style="font-family:'Arial Negreta', 'Arial Normal', 'Arial';font-weight:700;">；</span></p><p style="font-size:28px;"><span style="font-family:'Arial Negreta', 'Arial Normal', 'Arial';font-weight:700;">&#149; 左上角的返回按钮会唤出投票解散和退出房间的弹窗；</span></p><p style="font-size:28px;"><span style="font-family:'Arial Negreta', 'Arial Normal', 'Arial';font-weight:700;">&#149; 主聊天功能会显示目前聊天，在其他二级页面时点击主聊天按钮会再次跳转到大聊天区域</span></p><p style="font-size:28px;"><span style="font-family:'Arial Negreta', 'Arial Normal', 'Arial';font-weight:700;">&#149; 开麦功能点击后将进行语言通话，再次点击可关闭；</span></p><p style="font-size:28px;"><span style="font-family:'Arial Negreta', 'Arial Normal', 'Arial';font-weight:700;">&#149; 图片功能点击后会显示个人的图库页面，可选择心仪的图片发送至聊天室， 删除的图片可在回收站找回；</span></p><p style="font-size:28px;"><span style="font-family:'Arial Negreta', 'Arial Normal', 'Arial';font-weight:700;">&#149; 文字功能点击后将跳转到文字专属聊天页面，此页面支持仅文字输入对话；</span></p><p style="font-size:28px;"><span style="font-family:'Arial Negreta', 'Arial Normal', 'Arial';font-weight:700;">&#149; 长文章功能点击后会跳转到个人的长文章编辑页面，用户可在此输入想要编辑的信息并生成长文章图片。</span></p><p style="font-size:28px;"><span style="font-family:'Arial Negreta', 'Arial Normal', 'Arial';font-weight:700;">&#149; </span></p><p style="font-size:28px;"><span style="font-family:'Arial Negreta', 'Arial Normal', 'Arial';font-weight:700;">&#149; 快速匹配页面</span></p><p style="font-size:28px;"><span style="font-family:'Arial Normal', 'Arial';font-weight:400;">&#149; 点击将跳转到系统自动匹配的全开放房间页面</span></p><p style="font-size:28px;"><span style="font-family:'Arial Normal', 'Arial';font-weight:400;">&#149; </span></p><p style="font-size:28px;"><span style="font-family:'Arial Negreta', 'Arial Normal', 'Arial';font-weight:700;">&#149; 指定房间页面</span></p><p style="font-size:28px;"><span style="font-family:'Arial Normal', 'Arial';font-weight:400;">&#149; 点击跳转搜索房间页面</span></p><p style="font-size:28px;"><span style="font-family:'Arial Normal', 'Arial';font-weight:400;">&#149; 在此页面输入对应的房间密码将会跳转至相对应的房间</span></p><p style="font-size:28px;"><span style="font-family:'Arial Negreta', 'Arial Normal', 'Arial';font-weight:700;"><br></span></p>
-        </div>
-      </div>
-
-      <!-- 顶部菜单 (矩形) -->
-      <div id="u180" class="ax_default box_2" data-label="顶部菜单">
-        <div id="u180_div" class=""></div>
-      </div>
-
-      <!-- Unnamed (矩形) -->
-      <div id="u181" class="ax_default label">
-        <div id="u181_div" class=""></div>
-        <div id="u181_text" class="text ">
-          <p><span>长文章编辑</span></p>
-        </div>
-      </div>
-
-      <!-- 顶部菜单 (矩形) -->
-      <div id="u182" class="ax_default box_2" data-label="顶部菜单">
-        <div id="u182_div" class=""></div>
-      </div>
-
-      <!-- Unnamed (矩形) -->
-      <div id="u183" class="ax_default label">
-        <div id="u183_div" class=""></div>
-        <div id="u183_text" class="text ">
-          <p><span>长文章编辑</span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (连接线) -->
-      <div id="u184" class="ax_default _连接线">
-        <img id="u184_seg0" class="img " src="images/index/u184_seg0.png" alt="u184_seg0"/>
-        <img id="u184_seg1" class="img " src="images/index/u184_seg1.png" alt="u184_seg1"/>
-        <img id="u184_seg2" class="img " src="images/index/u184_seg2.png" alt="u184_seg2"/>
-        <img id="u184_seg3" class="img " src="images/index/u184_seg3.png" alt="u184_seg3"/>
-        <img id="u184_seg4" class="img " src="images/index/u184_seg4.png" alt="u184_seg4"/>
-        <div id="u184_text" class="text " style="display:none; visibility: hidden">
-          <p></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (连接线) -->
-      <div id="u185" class="ax_default _连接线">
-        <img id="u185_seg0" class="img " src="images/index/u185_seg0.png" alt="u185_seg0"/>
-        <img id="u185_seg1" class="img " src="images/index/u185_seg1.png" alt="u185_seg1"/>
-        <img id="u185_seg2" class="img " src="images/index/u185_seg2.png" alt="u185_seg2"/>
-        <div id="u185_text" class="text " style="display:none; visibility: hidden">
-          <p></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (连接线) -->
-      <div id="u186" class="ax_default _连接线">
-        <img id="u186_seg0" class="img " src="images/index/u186_seg0.png" alt="u186_seg0"/>
-        <img id="u186_seg1" class="img " src="images/index/u186_seg1.png" alt="u186_seg1"/>
-        <img id="u186_seg2" class="img " src="images/index/u156_seg2.png" alt="u186_seg2"/>
-        <div id="u186_text" class="text " style="display:none; visibility: hidden">
-          <p></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (连接线) -->
-      <div id="u187" class="ax_default _连接线">
-        <img id="u187_seg0" class="img " src="images/index/u187_seg0.png" alt="u187_seg0"/>
-        <img id="u187_seg1" class="img " src="images/index/u187_seg1.png" alt="u187_seg1"/>
-        <img id="u187_seg2" class="img " src="images/index/u187_seg2.png" alt="u187_seg2"/>
-        <div id="u187_text" class="text " style="display:none; visibility: hidden">
-          <p></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (连接线) -->
-      <div id="u188" class="ax_default _连接线">
-        <img id="u188_seg0" class="img " src="images/index/u188_seg0.png" alt="u188_seg0"/>
-        <div id="u188_text" class="text " style="display:none; visibility: hidden">
-          <p></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (连接线) -->
-      <div id="u189" class="ax_default _连接线">
-        <img id="u189_seg0" class="img " src="images/index/u189_seg0.png" alt="u189_seg0"/>
-        <div id="u189_text" class="text " style="display:none; visibility: hidden">
-          <p></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (文本框) -->
-      <div id="u190" class="ax_default text_field">
-        <input id="u190_input" type="text" value=""/>
-      </div>
-
-      <!-- Unnamed (矩形) -->
-      <div id="u191" class="ax_default label">
-        <div id="u191_div" class=""></div>
-        <div id="u191_text" class="text ">
-          <p><span>标题</span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (矩形) -->
-      <div id="u192" class="ax_default label">
-        <div id="u192_div" class=""></div>
-        <div id="u192_text" class="text ">
-          <p><span>正文</span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (矩形) -->
-      <div id="u193" class="ax_default _文本段落">
-        <img id="u193_img" class="img " src="images/index/u193.png"/>
-      </div>
-
-      <!-- Unnamed (矩形) -->
-      <div id="u194" class="ax_default primary_button">
-        <div id="u194_div" class=""></div>
-        <div id="u194_text" class="text ">
-          <p><span>生成</span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (矩形) -->
-      <div id="u195" class="ax_default _一级标题">
-        <div id="u195_div" class=""></div>
-        <div id="u195_text" class="text ">
-          <p><span>XXXXX</span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (形状) -->
-      <div id="u196" class="ax_default icon">
-        <img id="u196_img" class="img " src="images/index/u196.png"/>
-      </div>
-
-      <!-- Unnamed (矩形) -->
-      <div id="u197" class="ax_default _二级标题">
-        <div id="u197_div" class=""></div>
-        <div id="u197_text" class="text ">
-          <p><span>图片已生成</span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (连接线) -->
-      <div id="u198" class="ax_default _连接线">
-        <img id="u198_seg0" class="img " src="images/index/u198_seg0.png" alt="u198_seg0"/>
-        <img id="u198_seg1" class="img " src="images/index/u198_seg1.png" alt="u198_seg1"/>
-        <img id="u198_seg2" class="img " src="images/index/u198_seg2.png" alt="u198_seg2"/>
-        <img id="u198_seg3" class="img " src="images/index/u198_seg3.png" alt="u198_seg3"/>
-        <div id="u198_text" class="text " style="display:none; visibility: hidden">
-          <p></p>
-        </div>
-      </div>
-
-      <!-- 顶部菜单 (矩形) -->
-      <div id="u199" class="ax_default box_2" data-label="顶部菜单">
-        <div id="u199_div" class=""></div>
-      </div>
-
-      <!-- Unnamed (矩形) -->
-      <div id="u200" class="ax_default label">
-        <div id="u200_div" class=""></div>
-        <div id="u200_text" class="text ">
-          <p><span>文字聊天</span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (图片) -->
-      <div id="u201" class="ax_default image">
-        <img id="u201_img" class="img " src="images/index/u201.jpg"/>
-      </div>
-
-      <!-- Unnamed (图片) -->
-      <div id="u202" class="ax_default image">
-        <img id="u202_img" class="img " src="images/index/u202.jpg"/>
-      </div>
     </div>
-  </body>
+
+    <div id="maximizePanelContainer">
+        <iframe id="expandFrame" src="resources/expand.html" width="100%" height="100%" scrolling="no" allowtransparency="true" frameborder="0"></iframe>
+    </div>
+
+</body>
 </html>
