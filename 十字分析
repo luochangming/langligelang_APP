@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>十字分析</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <link href="resources/css/jquery-ui-themes.css" type="text/css" rel="stylesheet"/>
+    <link href="resources/css/axure_rp_page.css" type="text/css" rel="stylesheet"/>
+    <link href="data/styles.css" type="text/css" rel="stylesheet"/>
+    <link href="files/十字分析/styles.css" type="text/css" rel="stylesheet"/>
+    <script src="resources/scripts/jquery-1.7.1.min.js"></script>
+    <script src="resources/scripts/jquery-ui-1.8.10.custom.min.js"></script>
+    <script src="resources/scripts/prototypePre.js"></script>
+    <script src="data/document.js"></script>
+    <script src="resources/scripts/prototypePost.js"></script>
+    <script src="files/十字分析/data.js"></script>
+    <script type="text/javascript">
+      $axure.utils.getTransparentGifPath = function() { return 'resources/images/transparent.gif'; };
+      $axure.utils.getOtherPath = function() { return 'resources/Other.html'; };
+      $axure.utils.getReloadPath = function() { return 'resources/reload.html'; };
+    </script>
+  </head>
+  <body>
+    <div id="base" class="">
+
+      <!-- Unnamed (形状) -->
+      <div id="u654" class="ax_default icon">
+        <img id="u654_img" class="img " src="images/十字分析/u654.png"/>
+      </div>
+
+      <!-- Unnamed (形状) -->
+      <div id="u655" class="ax_default icon">
+        <img id="u655_img" class="img " src="images/十字分析/u655.png"/>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u656" class="ax_default box_1">
+        <div id="u656_div" class=""></div>
+        <div id="u656_text" class="text ">
+          <p><span style="color:#FF0000;">重要的必须的</span></p><p><span>产品大图</span></p><p><span>产品小图</span></p><p><span>产品名称</span></p><p><span>价格</span></p><p><span>购买按钮</span></p><p><span>加入购买车</span></p><p><span>收货人信息地址等</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u657" class="ax_default box_1">
+        <div id="u657_div" class=""></div>
+        <div id="u657_text" class="text ">
+          <p><span style="font-family:'微软雅黑';color:#FF9900;">重要不必须的</span></p><p><span style="font-family:'Arial Normal', 'Arial';">分享</span></p><p><span style="font-family:'Arial Normal', 'Arial';">店铺地址</span></p><p><span style="font-family:'Arial Normal', 'Arial';">排序</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u658" class="ax_default box_1">
+        <div id="u658_div" class=""></div>
+        <div id="u658_text" class="text ">
+          <p><span style="color:#999999;">必须不重要的</span></p><p><span>历史记录</span></p><p><span>产品详情</span></p><p><span>评价&amp;数量</span></p><p><span>店铺名称</span></p><p><span>店铺等级&amp;图标</span></p><p><span>进入店铺</span></p><p><span>聊天</span></p><p><span>筛选</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u659" class="ax_default box_1">
+        <div id="u659_div" class=""></div>
+        <div id="u659_text" class="text ">
+          <p><span style="font-family:'微软雅黑';color:#CCCCCC;">不重要不必须的</span></p><p><span style="font-family:'Arial Normal', 'Arial';">你的足迹</span></p><p><span style="font-family:'Arial Normal', 'Arial';">添加好友</span></p><p><span style="font-family:'Arial Normal', 'Arial';">拍照寻实物</span></p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
